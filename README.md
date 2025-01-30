@@ -6,7 +6,6 @@
 ##
 
 <div>
-  <a href="https://github.com/gabrielmoraespro">
   <img height="200em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=gabrielmoraespro&theme=gotham&show_icons=true&hide_border=false&layout=compact">
   <img height="200em" src="https://github-readme-stats.vercel.app/api?username=gabrielmoraespro&theme=gotham&show_icons=true&hide_border=false&c"> 
   <img height="200em" src="https://github-readme-streak-stats.herokuapp.com/?user=gabrielmoraespro&theme=gotham&hide_border=true&c">
