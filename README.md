@@ -1,7 +1,8 @@
 # Hello! I'm Gabriel Moraes!
 
-- Cybersecurity Pentester @ [Técnicas de Invasão](https://github.com/brunofragax)
-- Systems analysis and development @ [GranFaculdade](https://faculdade.grancursosonline.com.br/)
+- Cybersecurity Pentester @ [Técnicas de Invasão] (https://github.com/brunofragax)
+- Do Bug ao Bounty @ [Pato Academy] (https://pato.academy/)
+- Systems analysis and development @ [GranFaculdade] (https://faculdade.grancursosonline.com.br/)
 - He/Him
 ##
 
