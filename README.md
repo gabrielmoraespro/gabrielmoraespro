@@ -4,10 +4,11 @@
 - Do Bug ao Bounty @ [Pato Academy] (https://pato.academy/)
 - Systems analysis and development @ [GranFaculdade] (https://faculdade.grancursosonline.com.br/)
 - He/Him
-#
+
 
 ![snake gif](https://github.com/gabrielmoraespro/gabrielmoraespro/blob/output/github-contribution-grid-snake.svg)
-<hr>
+
+
 <div>
   <img height="200em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=gabrielmoraespro&theme=gotham&show_icons=true&hide_border=false&layout=compact">
   <img height="200em" src="https://github-readme-stats.vercel.app/api?username=gabrielmoraespro&theme=gotham&show_icons=true&hide_border=false&c"> 
