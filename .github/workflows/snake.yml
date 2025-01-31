@@ -1,52 +1,42 @@
-# GitHub Action para gerar um gráfico de contribuições com uma cobra comendo suas contribuições.
-
-name: Generate Snake
-
-# Controla quando a ação será executada. Esta ação roda a cada 6 horas.
+name: Generate Snake Animation
 
 on:
   schedule:
-    # a cada 6 horas
+    # Schedule to run every 6 hours
     - cron: "0 */6 * * *"
   workflow_dispatch:
 
-# A sequência de execuções neste workflow:
 jobs:
-  # Este workflow contém um único trabalho chamado "build"
   build:
-    # O tipo de runner que o trabalho será executado
     runs-on: ubuntu-latest
 
-    # As etapas representam uma sequência de tarefas que serão executadas como parte do trabalho
     steps:
+      # Step 1: Checkout the repository
+      - name: Checkout Repository
+        uses: actions/checkout@v2
 
-    # Verifica o repositório sob $GITHUB_WORKSPACE, para que seu trabalho possa acessá-lo
-    - uses: actions/checkout@v2
+      # Step 2: Generate the snake animation
+      - name: Generate Snake Animation
+        uses: Platane/snk@master
+        id: snake-gif
+        with:
+          github_user_name: gabrielmoraespro  # Replace with your GitHub username
+          gif_out_path: dist/github-contribution-grid-snake.gif
+          svg_out_path: dist/github-contribution-grid-snake.svg
 
-    # Gera a cobra
-    - uses: Platane/snk@master
-      id: snake-gif
-      with:
-        github_user_name: gabrielmoraespro  # Substitua pelo seu nome de usuário do GitHub
-        gif_out_path: dist/github-contribution-grid-snake.gif
-        svg_out_path: dist/github-contribution-grid-snake.svg
+      # Step 3: Push changes to the output branch
+      - name: Push changes to Output Branch
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.MY_PAT }}  # Use your PAT here
+          branch: output  # The branch where you want to push the changes
+          force: true
 
-    # Mostra o status da construção. Facilita a depuração (se houver problemas).
-    - run: git status
-
-    # Push das alterações
-    - name: Push changes
-      uses: ad-m/github-push-action@master
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        branch: output  # Altere para o branch correto onde deseja fazer o push
-        force: true
-
-    # Implantar os arquivos gerados no branch 'output'
-    - name: Deploy to Output Branch
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}  # Verifique se está correto
-        publish_dir: ./dist
-        publish_branch: output
-        commit_message: "Atualizar animação da cobra [skip ci]"
+      # Step 4: Deploy the generated files to the output branch
+      - name: Deploy to Output Branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.MY_PAT }}  # Use your PAT here
+          publish_dir: ./dist
+          publish_branch: output
+          commit_message: "Update snake animation [skip ci]"
